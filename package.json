@@ -1,0 +1,32 @@
+{
+  "name": "hello-react",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --setupTestFrameworkScriptFile=raf/polyfill",
+    "build:dev-server": "webpack-dev-server --inline --progress --colors",
+    "build:dev": "webpack --progress --colors",
+    "build:prod": "NODE_ENV=production webpack --optimize-minimize --progress --colors"
+  },
+  "dependencies": {
+    "axios": "^0.17.0",
+    "enzyme": "^3.1.1",
+    "enzyme-adapter-react-16": "^1.0.4",
+    "jest": "^21.2.1",
+    "path": "^0.12.7",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "6",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.17",
+    "copy-webpack-plugin": "^4.2.0",
+    "html-webpack-plugin": "^2.30.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
+  }
+}

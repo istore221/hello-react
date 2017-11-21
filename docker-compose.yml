@@ -1,0 +1,7 @@
+version: '3'
+services:
+  web:
+    build: .
+    image: istore221/hello-react:1.0.0
+    ports:
+     - "80:80"
