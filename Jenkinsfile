@@ -8,7 +8,8 @@ pipeline {
         }
         stage('Remove Old Images') {
             steps {
-                sh 'docker rmi $(docker images | grep istore221/hello-react | tail -n +2 | awk "{print $3}") --force  > /dev/null 2>&1'
+              /* remove old images and redirect stderror to stdout*/
+                sh 'docker rmi $(docker images | grep istore221/hello-react | tail -n +2 | awk "{print $3}") --force 2>&1'
             }
         }
     }
