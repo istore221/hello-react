@@ -60,7 +60,5 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 # Start nginx
 CMD ["nginx"]
 
-#https://stdout.roman.zone/jenkins-docker-python
-
 # Expose port 80
 EXPOSE 80
