@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build & Run Docker Image') {
             steps {
-                sh 'docker --version'
+                sh 'docker-compose up -d'
             }
         }
     }
