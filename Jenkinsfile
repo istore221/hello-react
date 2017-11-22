@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build & Run Docker Image') {
             steps {
-                sh 'gpasswd -a $USER docker'
+                sh 'groups'
                 sh 'docker build -t test .'
             }
         }
