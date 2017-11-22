@@ -3,4 +3,4 @@ import ReactDOM from 'react-dom';
 import Hello from './components/Hello'
 
 
-ReactDOM.render(<Hello str="dumb"/>, document.getElementById('app'));
+ReactDOM.render(<Hello str="salalala"/>, document.getElementById('app'));
