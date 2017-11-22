@@ -9,10 +9,15 @@ pipeline {
         stage('Remove Old Images') {
             steps {
                 sh '''
-                  for i in 1 2 3 4 5
-                  do
-                     echo "Welcome $i times"
-                  done
+                docker rmi $(docker images -q -f dangling=true)
+                if [ $? -eq 0 ]
+                  then
+                    echo "The script ran ok"
+                    exit 0
+                  else
+                    echo "The script failed" >&2
+                    exit 0
+                  fi
                 '''
                 //sh 'set -e docker rmi $(docker images -q -f dangling=true)' //remove <none> images
                 //sh 'set -e docker rmi $(docker images | grep istore221/hello-react | tail -n +2 | awk "{print $3}") --force'
