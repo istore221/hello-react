@@ -15,7 +15,7 @@ pipeline {
             steps {
                 sh '''
                   docker rmi $(docker images -q -f dangling=true) --force
-                  docker rmi $(docker images | grep ${env.IMAGE_NAME} | tail -n +2 | awk "{print $3}") --force
+                  docker rmi $(docker images | grep istore221/hello-react | tail -n +2 | awk "{print $3}") --force
                   exit 0
                 '''
             }
