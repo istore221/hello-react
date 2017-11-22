@@ -8,8 +8,11 @@ pipeline {
         }
         stage('Remove Old Images') {
             steps {
-                sh 'set -e docker rmi $(docker images -q -f dangling=true)' //remove <none> images
-                sh 'set -e docker rmi $(docker images | grep istore221/hello-react | tail -n +2 | awk "{print $3}") --force'
+                sh '''
+                  echo "done done"
+                '''
+                //sh 'set -e docker rmi $(docker images -q -f dangling=true)' //remove <none> images
+                //sh 'set -e docker rmi $(docker images | grep istore221/hello-react | tail -n +2 | awk "{print $3}") --force'
             }
         }
     }
