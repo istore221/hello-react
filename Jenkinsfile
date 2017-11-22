@@ -3,8 +3,7 @@ pipeline {
     stages {
         stage('Build & Run Docker Image') {
             steps {
-                sh 'groups'
-                sh 'echo $USER'
+                sh 'docker --version'
             }
         }
     }
