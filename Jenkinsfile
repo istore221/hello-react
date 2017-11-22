@@ -3,7 +3,6 @@ pipeline {
     stages {
         stage('Run Docker Compose') {
             steps {
-                sh 'export PACKAGE_VERSION=1.0.0'
                 sh 'docker-compose up -d --build'
             }
         }
