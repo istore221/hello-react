@@ -7,7 +7,6 @@ pipeline {
     stages {
         stage('Run Docker Compose') {
             steps {
-                sh 'echo ${VERSION}'
                 sh 'docker-compose up -d --build'
             }
         }
