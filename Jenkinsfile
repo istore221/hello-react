@@ -4,7 +4,7 @@ pipeline {
         stage('Build & Run Docker Image') {
             steps {
                 sh 'groups'
-                sh 'docker build -t test .'
+                sh 'echo $USER'
             }
         }
     }
