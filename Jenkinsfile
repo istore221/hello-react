@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
        IMAGE = 'istore221/hello-react'
-       VERSION = sh(returnStdout: true, script: 'node -e "console.log('hello world');')
+       VERSION = sh(returnStdout: true, script: 'node -e "console.log("hello world");')
      }
     stages {
         stage('Run Docker Compose') {
