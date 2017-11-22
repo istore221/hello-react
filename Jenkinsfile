@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Run Docker Compose') {
             steps {
-                sh 'export PACKAGE_VERSION=$(node -p \"require(\"./package.json\").version\")'
+                sh 'echo ""salalalalaa""'
                 sh 'docker-compose up -d --build'
             }
         }
