@@ -6,9 +6,9 @@ pipeline {
                 sh 'docker-compose up -d --build'
             }
         }
-        stage('Remove Untagged Images') {
+        stage('Remove Old Images') {
             steps {
-                sh 'docker rmi $(docker images | grep "^<none>" | awk "{print $3}") --force'
+                sh 'docker rmi $(docker images | grep istore221/hello-react | tail -n +2 | awk "{print $3}") --force  > /dev/null 2>&1'
             }
         }
     }
