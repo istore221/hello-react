@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Run Docker Compose') {
             steps {
-                sh 'env'
+                sh './test.sh'
                 sh 'docker-compose up -d --build'
             }
         }
