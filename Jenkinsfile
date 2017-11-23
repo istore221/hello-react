@@ -5,12 +5,12 @@ pipeline {
        VERSION = sh(returnStdout: true, script: 'node -e \"console.log(require(\'./package.json\').version);\"')
     }
     parameters {
-       booleanParam(defaultValue: true, description: '', name: 'userFlag')
+       booleanParam(defaultValue: false, description: '', name: 'deployProd')
      }
     stages {
         stage('Run Docker Compose') {
             steps {
-                echo "flag: ${params.userFlag}"
+                echo "deployProd: ${params.deployProd}"
                 sh './startup.sh'
             }
         }
