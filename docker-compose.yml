@@ -5,5 +5,4 @@ services:
     image: "istore221/hello-react:${VERSION}"
     ports:
      - "80:80"
-    env_file:
-     - "./.env"
+  
