@@ -3,10 +3,14 @@ pipeline {
     environment {
        IMAGE = 'istore221/hello-react'
        VERSION = sh(returnStdout: true, script: 'node -e \"console.log(require(\'./package.json\').version);\"')
+    }
+    parameters {
+       booleanParam(defaultValue: true, description: '', name: 'userFlag')
      }
     stages {
         stage('Run Docker Compose') {
             steps {
+                echo "flag: ${params.userFlag}"
                 sh './startup.sh'
             }
         }
