@@ -1,1 +1,1 @@
-echo "from script -->${VERSION}"
+docker-compose up -d --build

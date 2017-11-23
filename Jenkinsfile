@@ -8,7 +8,7 @@ pipeline {
         stage('Run Docker Compose') {
             steps {
                 sh './test.sh'
-                sh 'docker-compose up -d --build'
+                //sh 'docker-compose up -d --build'
             }
         }
         stage('Remove Unused Images') {
