@@ -3,8 +3,9 @@ const path = require('path'),
       CopyWebpackPlugin = require('copy-webpack-plugin'),
       HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const IS_PROD = (process.env.NODE_ENV ? true : false);
+const IS_PROD = (process.env.NODE_ENV == 'production' ? true : false);
 
+console.log("hey hey look here -->"+IS_PROD)
 
 module.exports = {
   entry: './js/index.js',

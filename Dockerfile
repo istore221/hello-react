@@ -12,6 +12,11 @@ HEALTHCHECK --interval=5m --timeout=3s \
 ENV NVM_DIR /usr/local/nvm
 ENV NODE_VERSION 8.9.1
 
+# build arguments, which are environment variables accessible only during the docker build process
+ARG BUILD_ENV
+
+
+
 # Replace shell with bash so we can source files
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
@@ -48,7 +53,7 @@ ADD . .
 
 # Install dependencies and build
 RUN yarn install && \
-    yarn build:prod && \
+    yarn build:$BUILD_ENV && \
     cp -rf dist/* /usr/share/nginx/html/ && \
     rm -rf /usr/share/nginx/html/hello-react
 
