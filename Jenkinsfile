@@ -7,6 +7,7 @@ pipeline {
     stages {
         stage('Run Docker Compose') {
             steps {
+                sh 'echo wokring ${env.VERSION}'
                 sh 'docker-compose up -d --build'
             }
         }
