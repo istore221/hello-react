@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Run Docker Compose') {
             steps {
-                sh 'echo VERSION=${VERSION} > .env && cat .env && docker-compose up -d --build'
+                sh 'export VERSION=${VERSION} && docker-compose up -d --build'
             }
         }
         stage('Remove Unused Images') {
