@@ -8,7 +8,7 @@ pipeline {
         stage('Run Docker Compose') {
             steps {
                 sh '''
-                export VERSION=1.0.0
+                export VERSION=${VERSION}
                 docker-compose up -d --build
                 '''
                 //sh 'docker-compose up -d --build'
