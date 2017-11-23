@@ -25,7 +25,7 @@ pipeline {
             }
             steps {
                 echo "RELEASE_BUILD: ${params.RELEASE_BUILD}"
-                //sh './startup.sh prod'
+                //sh './startup.sh prod' // also can be done using paramaterized build
             }
         }
     }
