@@ -7,6 +7,7 @@ pipeline {
     stages {
         stage('Run Docker Compose') {
             steps {
+                sh 'echo "VERSION=${VERSION}" > .env' 
                 sh 'docker-compose up -d --build'
             }
         }
