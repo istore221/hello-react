@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Release To Production Environment') {
             when {
-                environment name: 'RELEASE_BUILD', value: true
+                environment name: 'RELEASE_BUILD', value: 'true'
             }
             steps {
                 echo "RELEASE_BUILD: ${params.RELEASE_BUILD}"
