@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Run Docker Compose') {
             steps {
-                sh './startup.sh'
+                sh './startup.sh dev'
             }
         }
         stage('Remove Unused Images') {
@@ -25,6 +25,7 @@ pipeline {
             }
             steps {
                 echo "RELEASE_BUILD: ${params.RELEASE_BUILD}"
+                //sh './startup.sh prod'
             }
         }
     }
